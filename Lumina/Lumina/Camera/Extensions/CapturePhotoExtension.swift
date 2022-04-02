@@ -16,7 +16,7 @@ extension AVCapturePhoto {
         guard let cgImage = self.cgImageRepresentation() else {
             return nil
         }
-        return UIImage(cgImage: cgImage.takeUnretainedValue(), scale: 1.0, orientation: getImageOrientation(forCamera: position))
+        return UIImage(cgImage: cgImage, scale: 1.0, orientation: getImageOrientation(forCamera: position))
     }
 
     private func getImageOrientation(forCamera: CameraPosition) -> UIImage.Orientation {
